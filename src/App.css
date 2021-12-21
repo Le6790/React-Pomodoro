@@ -13,14 +13,22 @@
   }
 }
 
-.App-header {
-  background-color:#9B2226;
-  min-height: 50vh;
+.App-tasks {
+  font-size: calc(10px + 2vmin);
+  display:flex;
+  flex-direction:column;
+  justify-content: left;
+  padding: 1px;
+
+}
+.App-background {
+  background-color:#d95550;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  font-size: calc(10px + 2vmin);
+  justify-content:start;
+  font-size: calc(5px + 2vmin);
   color: white;
 }
 
@@ -32,9 +40,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:#AE2012;
+  background-color:#dd6662;
   border-radius: 10px;
-  padding:50px;
+  padding:30px;
   font-family: 'DejaVu Sans Mono';
 
 }
@@ -43,7 +51,7 @@
   display:flex;
   flex-direction: row;
   align-items:center;
-  background-color: #9B2226;
+  background-color: #ffffff;
   padding:15px;
   border-radius: 50px;
   
@@ -76,7 +84,7 @@
 }
 
 .App-timerText{
-  font-size: 70px;
+  font-size: calc(5px + 5vmin);
   color:#E9D8A6;
 }
 

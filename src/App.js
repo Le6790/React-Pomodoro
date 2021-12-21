@@ -3,10 +3,9 @@ import Pomodoro from './Pomodoro.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Pomodoro />
-      </header>
+    <div className="App-background">
+      <Pomodoro />
+      {/* <h1 className="App-tasks">Tasks:</h1> */}
     </div>
   );
 }
