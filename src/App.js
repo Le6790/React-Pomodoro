@@ -6,6 +6,7 @@ function App() {
     <div className="App-background">
       <Pomodoro />
       {/* <h1 className="App-tasks">Tasks:</h1> */}
+
     </div>
   );
 }

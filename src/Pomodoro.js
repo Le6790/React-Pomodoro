@@ -9,7 +9,7 @@ class Pomodoro extends React.Component {
             isCountingDown: false,
             nIntervalID: null,
             breakTime: false,
-            overall_counter:1
+            overall_counter: 1
         }
 
     }
@@ -20,8 +20,8 @@ class Pomodoro extends React.Component {
         return (String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0'))
     }
 
-    prettyPrintCounter(){
-        if (this.state.overall_counter >0){
+    prettyPrintCounter() {
+        if (this.state.overall_counter > 0) {
             return ("#" + this.state.overall_counter);
         }
     }
@@ -38,6 +38,7 @@ class Pomodoro extends React.Component {
             this.setState(
                 { totalSeconds: this.state.totalSeconds - 1 }
             )
+            console.log("decrementing. TotalSeconds: " + this.state.totalSeconds);
         }
 
         //Reached the end of the timer. Stop decrementing and go into breaktime!
@@ -59,16 +60,16 @@ class Pomodoro extends React.Component {
             //this.set_breaktime();
         }
         // Reach the end of the break time, Stop decrementing and go into normal pomodoro!
-        else if (this.state.totalSeconds <= 0 && this.state.breakTime === true){
+        else if (this.state.totalSeconds <= 0 && this.state.breakTime === true) {
             clearInterval(this.state.nIntervalID);
             this.setState(
-                {   
+                {
                     // Setting normal pomodoro time
-                    totalSeconds:1500,
+                    totalSeconds: 1500,
                     isCountingDown: false,
                     nIntervalID: null,
                     breakTime: false,
-                    overall_counter: this.state.overall_counter+1,
+                    overall_counter: this.state.overall_counter + 1,
                 }
             )
 
@@ -84,6 +85,7 @@ class Pomodoro extends React.Component {
                 isCountingDown: false,
                 nIntervalID: null,
                 breakTime: false,
+                overall_counter: this.state.overall_counter + 1,
             }
         );
         this.stopCountdown()
@@ -112,11 +114,11 @@ class Pomodoro extends React.Component {
     }
 
     sayMessage() {
-        if (this.state.breakTime === false) {
-            return ("Time To Focus!");
+        if (this.state.breakTime === true) {
+            return ("Break Time!");
         }
         else {
-            return ("Break Time!");
+            return ("Time To Focus!");
         }
     }
 
